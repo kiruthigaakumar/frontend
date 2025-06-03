@@ -21,7 +21,7 @@ export class SignupComponent {
 
   onSignup() {
     localStorage.removeItem('authToken');
-    this.http.post('http://localhost:1426/register', this.signupObj).subscribe({
+    this.http.post('http://localhost:1010/register', this.signupObj).subscribe({
       next: (res: any) => {
         alert('Registration successful!');
         this.router.navigateByUrl('/login');

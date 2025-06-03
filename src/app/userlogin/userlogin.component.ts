@@ -25,7 +25,7 @@ export class UserloginComponent {
 
     try {
       const response = await firstValueFrom(
-        this.http.post<{ message: string }>('http://localhost:1426/send-otp', { email: this.email })
+        this.http.post<{ message: string }>('http://localhost:1010/send-otp', { email: this.email })
       );
 
       console.log(response.message); // Optional: log backend message

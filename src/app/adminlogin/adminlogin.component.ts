@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-adminlogin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  imports: [CommonModule, FormsModule, RouterModule],
+  templateUrl: './adminlogin.component.html',
+  styleUrl: './adminlogin.component.css'
 })
-export class LoginComponent {
+export class AdminloginComponent {
   loginObj = {
     username: '',
     password: ''
@@ -31,11 +31,10 @@ export class LoginComponent {
           alert('Login failed: token not received.');
         }
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Login error:', err);
         alert('Login failed. Please try again.');
       }
     });
   }
 }
-
